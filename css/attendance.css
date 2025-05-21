@@ -1,0 +1,216 @@
+/* ============================
+   Variables y reset básico
+   ============================ */
+:root {
+  --purple: #735CFF;
+  --light-bg: #F9FAFB;
+  --card-bg: #FFF;
+  --muted: #6B7280;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
+}
+
+/* ============================
+   Contenedor principal
+   ============================ */
+.dashboard-container {
+  display: flex;
+  height: 100%;
+}
+
+/* ============================
+   Sidebar
+   ============================ */
+.sidebar {
+  width: 220px;
+  background-color: #EEF2FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-header {
+  padding: 20px;
+}
+
+.sidebar-header h2 {
+  font-size: 18px;
+  color: var(--purple);
+}
+
+.sidebar-nav {
+  flex: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: background-color .2s, color .2s;
+}
+
+.sidebar-item.active,
+.sidebar-item:hover {
+  background-color: var(--card-bg);
+  color: var(--purple);
+}
+
+.sidebar-item .icon {
+  margin-right: 12px;
+  font-size: 18px;
+}
+
+.sidebar-footer {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-footer .avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* ============================
+   Main content
+   ============================ */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.breadcrumb .back-button {
+  color: var(--purple);
+  text-decoration: none;
+  margin-right: 8px;
+}
+.breadcrumb .back-button:hover {
+  text-decoration: underline;
+}
+
+.overview-header h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* ============================
+   Pestañas
+   ============================ */
+.tabs {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.tab {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: color .2s, border-color .2s;
+}
+.tab.active {
+  color: var(--purple);
+  border-color: var(--purple);
+}
+
+/* ============================
+   Chart placeholder
+   ============================ */
+.chart-container {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 32px;
+}
+
+.chart-placeholder {
+  height: 120px;
+  background: #EEE;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ============================
+   Secciones Upcoming & Pending
+   ============================ */
+.section {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.section h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.section .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid #F3F4F6;
+}
+
+.section .row:first-child {
+  border-top: none;
+}
+
+.upcoming-classes .class-name { flex: 2; }
+.upcoming-classes .class-time,
+.upcoming-classes .class-location,
+.upcoming-classes .class-instructor {
+  flex: 1;
+  text-align: center;
+}
+
+.pending-assignments .task-icon {
+  margin-right: 12px;
+  color: var(--purple);
+}
+
+.pending-assignments .task-title { flex: 2; }
+.pending-assignments .task-due {
+  flex: 1;
+  text-align: right;
+}
+
+/* Pestañas ocultas */
+.hidden { display: none; }

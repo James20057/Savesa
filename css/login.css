@@ -1,0 +1,156 @@
+/* ============================
+   Variables & Reset
+   ============================ */
+:root {
+  --primary-color: #735CFF;
+  --text-color:    #111827;
+  --muted-color:   #6B7280;
+  --bg-color:      #FFFFFF;
+  --input-bg:      #F3F4F6;
+  --radius:        9999px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--text-color);
+}
+
+/* ============================
+   Container
+   ============================ */
+.login-container {
+  width: 100%;
+  max-width: 360px;
+  padding: 32px 24px;
+  background: var(--bg-color);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+/* ============================
+   Header
+   ============================ */
+.login-container h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.login-container p {
+  font-size: 14px;
+  color: var(--muted-color);
+  margin-bottom: 24px;
+}
+
+/* ============================
+   Tabs
+   ============================ */
+.tabs {
+  display: flex;
+  gap: 16px;
+  border-bottom: 1px solid #E5E7EB;
+  margin-bottom: 32px;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  color: var(--muted-color);
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  transition: color .2s;
+}
+
+.tab.active {
+  color: var(--text-color);
+  font-weight: 600;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--primary-color);
+}
+
+/* ============================
+   Form Fields
+   ============================ */
+.login-container label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.login-container input {
+  width: 100%;
+  height: 44px;
+  padding: 0 16px;
+  font-size: 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--input-bg);
+  color: var(--text-color);
+  margin-bottom: 20px;
+}
+
+.login-container input::placeholder {
+  color: var(--muted-color);
+}
+
+/* ============================
+   Button
+   ============================ */
+.login-container button[type="submit"] {
+  width: 100%;
+  height: 44px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: var(--radius);
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFF;
+  cursor: pointer;
+  transition: background .2s;
+  margin-bottom: 16px;
+}
+
+.login-container button[type="submit"]:hover {
+  background: #5c47c7;
+}
+
+/* ============================
+   Forgot Link
+   ============================ */
+.forgot {
+  text-align: center;
+}
+
+.forgot a {
+  font-size: 14px;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: text-decoration .2s;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
