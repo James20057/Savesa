@@ -1,90 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account</title>
-
-<link rel="stylesheet" href="/css/register.css">
+    <title>Crear Cuenta - SAVESA</title>
+    <!-- React + Babel CDN -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="/css/register.css">
 </head>
 <body>
-    <div class="container">
-        <h2>Create Account</h2>
-        <p class="subtitle">Select your role</p>
-
-        <div class="tabs">
-            <div class="tab active" data-role="Student">Student</div>
-            <div class="tab" data-role="Teacher">Teacher</div>
-            <div class="tab" data-role="Administrator">Administrator</div>
-        </div>
-
-        <form id="registerForm" method="POST" action="/api/register">
-            <input type="hidden" name="role" id="role" value="Student">
-
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    placeholder="Enter your full name"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="Enter your email address"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="idCard">ID / Card Number</label>
-                <input
-                    type="text"
-                    id="idCard"
-                    name="idCard"
-                    placeholder="Enter your ID or student card number"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    placeholder="Create a password"
-                    required
-                >
-            </div>
-
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input
-                    type="password"
-                    id="confirmPassword"
-                    name="confirmPassword"
-                    placeholder="Re-enter your password"
-                    required
-                >
-            </div>
-
-            <button type="submit" class="btn">Register</button>
-        </form>
-
-        <p class="login-link">
-            Already have an account? <a href="login.html">Log in</a>
-        </p>
-    </div>
-
-      <script src="/js/register.js"></script>
-
+    <div id="root"></div>
+    <!-- Componente React de registro -->
+    <script type="text/babel" src="/Js/register.js"></script>
 </body>
 </html>

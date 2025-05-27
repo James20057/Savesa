@@ -1,16 +1,17 @@
 /**
- * Componente de login con pestañas de rol.
+ * Componente de login con logo y pestañas de rol, todo en español.
  */
 function LoginForm() {
-  const [role, setRole] = React.useState("Student");
+  const [role, setRole] = React.useState("Estudiante");
 
   return (
-    <div className="login-container">
-      <h2>Sign In</h2>
-      <p>Access your account</p>
+        <div className="login-container">
+      <img src="/images/SAVESA_LOGO.png" alt="Logo SAVESA" className="login-logo" />
+      <h2>Iniciar Sesión</h2>
+      <p>Accede a tu cuenta</p>
 
       <div className="tabs">
-        {["Student", "Teacher", "Administrator"].map((r) => (
+        {["Estudiante", "Profesor", "Administrador"].map((r) => (
           <div
             key={r}
             className={`tab ${role === r ? "active" : ""}`}
@@ -24,30 +25,33 @@ function LoginForm() {
       <form method="POST" action="procesar_login.php">
         <input type="hidden" name="role" value={role} />
 
-        <label htmlFor="email">Email</label>
+        <label htmlFor="email">Correo electrónico</label>
         <input
           type="email"
           id="email"
           name="email"
           required
-          placeholder="Enter your email"
+          placeholder="Ingresa tu correo"
         />
 
-        <label htmlFor="password">Password</label>
+        <label htmlFor="password">Contraseña</label>
         <input
           type="password"
           id="password"
           name="password"
           required
-          placeholder="Enter your password"
+          placeholder="Ingresa tu contraseña"
         />
 
-        <button type="submit">Login</button>
+        <button type="submit">Entrar</button>
       </form>
 
-      <div className="forgot">
-        <a href="#">Forgot password?</a>
-      </div>
+      <div className="login-links">
+    <a href="#" className="login-link">¿Olvidaste tu contraseña?</a>
+    <a href="/pages/register.html" className="login-link">Registrarse</a>
+  </div>
+
+
     </div>
   );
 }

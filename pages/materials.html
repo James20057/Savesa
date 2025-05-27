@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Materiales Educativos</title>
+  <link rel="stylesheet" href="/css/materials.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h2>Asistencia Virtual</h2>
+      </div>
+      <nav class="sidebar-nav">
+        <a class="sidebar-item" href="/index.html">
+          <span class="icon">📊</span><span class="label">Panel</span>
+        </a>
+        <a class="sidebar-item" href="/pages/attendance.html">
+          <span class="icon">✅</span><span class="label">Asistencia</span>
+        </a>
+        <a class="sidebar-item active" href="/pages/materials.html">
+          <span class="icon">📚</span><span class="label">Materiales</span>
+        </a>
+        <a class="sidebar-item" href="/pages/settings.html">
+          <span class="icon">⚙️</span><span class="label">Configuración</span>
+        </a>
+      </nav>
+      <div class="sidebar-footer">
+        <img src="/images/nopicture.png" alt="Avatar" class="avatar" />
+        <div>
+          <div class="user-name">Alex Johnson</div>
+          <div class="user-role">Estudiante</div>
+        </div>
+        <button class="logout-btn" onclick="logout()">🚪</button>
+    <!-- Mensaje flotante de logout -->
+    <div id="logout-message" class="logout-message" style="display:none;">
+    Cerrando sesión...
+    </div>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- Breadcrumb -->
+      <div class="breadcrumb">
+        <a href="index.html" class="back-button">Panel</a> &gt;
+        <span class="current">Materiales</span>
+      </div>
+
+      <div class="materials-content">
+        <h1>Materiales Educativos</h1>
+        <div class="tabs">
+          <button class="tab active" data-tab="all">Todos los materiales</button>
+          <button class="tab" data-tab="upload">Subir material</button>
+        </div>
+
+        <!-- Todos los materiales -->
+        <section id="all-materials" class="tab-content">
+          <h3>Materiales disponibles</h3>
+          <table class="materials-table">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Tipo</th>
+                <th>Subido por</th>
+                <th>Fecha</th>
+                <th>Acción</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Apuntes Álgebra.pdf</td>
+                <td>Documento</td>
+                <td>Mrs. Smith</td>
+                <td>12 May 2024</td>
+                <td><a href="#" class="download-link">Descargar</a></td>
+              </tr>
+              <tr>
+                <td>Fotosíntesis.mp4</td>
+                <td>Video</td>
+                <td>Mr. Lee</td>
+                <td>10 May 2024</td>
+                <td><a href="#" class="download-link">Descargar</a></td>
+              </tr>
+              <tr>
+                <td>Khan Academy: Fracciones</td>
+                <td>Enlace</td>
+                <td>Mrs. Smith</td>
+                <td>8 May 2024</td>
+                <td><a href="#" class="download-link">Abrir</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Subir material -->
+        <section id="upload-material" class="tab-content hidden">
+          <h3>Subir Material</h3>
+          <form class="upload-form">
+            <label for="title">Título</label>
+            <input type="text" id="title" name="title" placeholder="Ingresa el título del material" required>
+
+            <label for="description">Descripción</label>
+            <textarea id="description" name="description" rows="2" placeholder="Descripción breve (opcional)"></textarea>
+
+            <label for="type">Tipo de material</label>
+            <select id="type" name="type">
+              <option>Documento</option>
+              <option>Video</option>
+              <option>Enlace</option>
+            </select>
+
+            <label for="fileOrLink">Archivo o enlace</label>
+            <input type="text" id="fileOrLink" name="fileOrLink" placeholder="Selecciona un archivo o pega la URL">
+
+            <button type="submit" class="btn-upload">Subir</button>
+          </form>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Si quieres interactividad de pestañas -->
+  <script>
+    // Simple JS para alternar pestañas (no React, solo vanilla)
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab');
+      const contents = document.querySelectorAll('.tab-content');
+      tabs.forEach((tab, i) => {
+        tab.addEventListener('click', function() {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          contents.forEach(c => c.classList.add('hidden'));
+          contents[i].classList.remove('hidden');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+<script>
+  function logout() {
+    // Si usas localStorage/sessionStorage para guardar la sesión, bórrala aquí:
+    // localStorage.removeItem('token');
+    // Redirige al login:
+    window.location.href = '/pages/login.html'; // Cambia la ruta si tu login está en otra carpeta
+  }
+</script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard - Virtual Attendance</title>
+  <title>Panel - Asistencia Virtual</title>
   <!-- Apunta al CSS separado -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -12,128 +12,130 @@
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-header">
-        <h2>Virtual Attendance</h2>
+        <h2>Asistencia Virtual</h2>
       </div>
       <nav class="sidebar-nav">
-        <div class="sidebar-item active" data-key="dashboard">
-          <span class="icon">📊</span><span class="label">Dashboard</span>
-        </div>
-        <div class="sidebar-item" data-key="attendance">
-          <span class="icon">✅</span><span class="label">Attendance</span>
-        </div>
-        <div class="sidebar-item" data-key="materials">
-          <span class="icon">📚</span><span class="label">Materials</span>
-        </div>
-        <div class="sidebar-item" data-key="feedback">
-          <span class="icon">💬</span><span class="label">Feedback</span>
-        </div>
-        <div class="sidebar-item" data-key="live">
-          <span class="icon">🎥</span><span class="label">Live Class</span>
-        </div>
-        <div class="sidebar-item" data-key="notifications">
-          <span class="icon">🔔</span><span class="label">Notifications</span>
-        </div>
-        <div class="sidebar-item" data-key="reports">
-          <span class="icon">📈</span><span class="label">Reports</span>
-        </div>
-        <div class="sidebar-item" data-key="settings">
-          <span class="icon">⚙️</span><span class="label">Settings</span>
-        </div>
+        <a class="sidebar-item active" href="index.html">
+          <span class="icon">📊</span>
+          <span class="label">Panel</span>
+        </a>
+        <a class="sidebar-item" href="/pages/attendance.html">
+          <span class="icon">✅</span>
+          <span class="label">Asistencia</span>
+        </a>
+        <a class="sidebar-item" href="/pages/materials.html">
+          <span class="icon">📚</span>
+          <span class="label">Materiales</span>
+        </a>
+        <a class="sidebar-item" href="/pages/settings.html">
+          <span class="icon">⚙️</span>
+          <span class="label">Configuración</span>
+        </a>
       </nav>
       <div class="sidebar-footer">
-        <img src="https://via.placeholder.com/32" alt="Avatar" class="avatar" />
+        <img src="/images/nopicture.png" alt="Avatar" class="avatar" />
         <div>
           <div class="user-name">Alex Johnson</div>
-          <div class="user-role">Student</div>
+          <div class="user-role">Estudiante</div>
         </div>
+        <button class="logout-btn" onclick="logout()">🚪</button>
+
       </div>
     </aside>
 
     <!-- MAIN CONTENT -->
     <main class="main-content">
       <header class="overview-header">
-        <h1>Overview</h1>
+        <h1>Resumen</h1>
       </header>
 
-      <!-- OVERVIEW CARDS -->
+      <!-- TARJETAS DE RESUMEN -->
       <div class="cards-grid">
         <div class="overview-card">
           <div class="card-icon">✅</div>
-          <div class="card-title">Attendance</div>
-          <div class="card-value">92% Present</div>
-          <div class="card-subtitle">This month</div>
+          <div class="card-title">Asistencia</div>
+          <div class="card-value">92% Presente</div>
+          <div class="card-subtitle">Este mes</div>
           <button class="card-button" data-action="view-details">
-            View Details
+            Ver Detalles
           </button>
         </div>
 
         <div class="overview-card">
           <div class="card-icon">📅</div>
-          <div class="card-title">Next Class</div>
-          <div class="card-value">Math - Algebra II</div>
-          <div class="card-subtitle">Today, 10:00 AM</div>
+          <div class="card-title">Próxima Clase</div>
+          <div class="card-value">Matemáticas - Álgebra II</div>
+          <div class="card-subtitle">Hoy, 10:00 AM</div>
           <button class="card-button" data-action="join-class">
-            Join Class
+            Unirse a la Clase
           </button>
         </div>
 
         <div class="overview-card">
           <div class="card-icon">⏰</div>
-          <div class="card-title">Assignments</div>
-          <div class="card-value">2 Pending</div>
-          <div class="card-subtitle">Due this week</div>
+          <div class="card-title">Tareas</div>
+          <div class="card-value">2 Pendientes</div>
+          <div class="card-subtitle">Para esta semana</div>
           <button class="card-button" data-action="view-tasks">
-            View Tasks
+            Ver Tareas
           </button>
         </div>
       </div>
 
-      <!-- CHART PLACEHOLDER -->
+      <!-- GRÁFICA -->
       <div class="chart-container">
-        <div class="chart-placeholder">Attendance Summary Chart</div>
+        <div class="chart-placeholder">Resumen de Asistencia</div>
         <div class="chart-labels">
-          <span>Mon</span><span>Tue</span><span>Wed</span>
-          <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+          <span>Lun</span><span>Mar</span><span>Mié</span>
+          <span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
         </div>
       </div>
 
-      <!-- UPCOMING CLASSES -->
+      <!-- PRÓXIMAS CLASES -->
       <section class="section upcoming-classes">
-        <h4>Upcoming Classes</h4>
+        <h4>Próximas Clases</h4>
         <div class="row">
-          <span class="class-name">Algebra II</span>
+          <span class="class-name">Álgebra II</span>
           <span class="class-time">10:00 AM</span>
-          <span class="class-location">Room 204</span>
-          <span class="class-instructor">Ms. Carter</span>
+          <span class="class-location">Aula 204</span>
+          <span class="class-instructor">Prof. Carter</span>
           <span class="icon">➡️</span>
         </div>
         <div class="row">
-          <span class="class-name">Biology</span>
+          <span class="class-name">Biología</span>
           <span class="class-time">12:00 PM</span>
-          <span class="class-location">Lab 3</span>
-          <span class="class-instructor">Dr. Smith</span>
+          <span class="class-location">Laboratorio 3</span>
+          <span class="class-instructor">Dra. Smith</span>
           <span class="icon">➡️</span>
         </div>
       </section>
 
-      <!-- PENDING ASSIGNMENTS -->
+      <!-- TAREAS PENDIENTES -->
       <section class="section pending-assignments">
-        <h4>Pending Assignments</h4>
+        <h4>Tareas Pendientes</h4>
         <div class="row">
           <span class="task-icon">📥</span>
-          <span class="task-title">Algebra II Homework</span>
-          <span class="task-due">Due: Tomorrow</span>
+          <span class="task-title">Tarea de Álgebra II</span>
+          <span class="task-due">Para: Mañana</span>
         </div>
         <div class="row">
           <span class="task-icon">📥</span>
-          <span class="task-title">Biology Lab Report</span>
-          <span class="task-due">Due: Friday</span>
+          <span class="task-title">Informe de Biología</span>
+          <span class="task-due">Para: Viernes</span>
         </div>
       </section>
     </main>
   </div>
-
+<script>
+  function logout() {
+    // Si usas localStorage/sessionStorage para guardar la sesión, bórrala aquí:
+    // localStorage.removeItem('token');
+    // Redirige al login:
+    window.location.href = '/pages/login.html'; // Cambia la ruta si tu login está en otra carpeta
+  }
+</script>
+  
   <!-- Apunta al JS separado -->
-  <script src="script.js"></script>
+  <script src="/Js/script.js"></script>
 </body>
 </html>

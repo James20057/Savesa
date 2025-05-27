@@ -3,50 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Attendance Management</title>
-
+  <title>Gestión de Asistencia</title>
   <!-- enlace al CSS separado -->
   <link rel="stylesheet" href="/css/attendance.css">
+  <link rel="stylesheet" href="/css/styles.css">
+
 </head>
 <body>
   <div class="dashboard-container">
     <!-- SIDEBAR -->
     <aside class="sidebar">
       <div class="sidebar-header">
-        <h2>Virtual Attendance</h2>
+        <h2>Asistencia Virtual</h2>
       </div>
       <nav class="sidebar-nav">
-        <div class="sidebar-item" onclick="location.href='index.html'">
-          <span class="icon">📊</span><span class="label">Dashboard</span>
-        </div>
-        <div class="sidebar-item active">
-          <span class="icon">✅</span><span class="label">Attendance</span>
-        </div>
-        <div class="sidebar-item" onclick="location.href='materials.html'">
-          <span class="icon">📚</span><span class="label">Materials</span>
-        </div>
-        <div class="sidebar-item" onclick="location.href='feedback.html'">
-          <span class="icon">💬</span><span class="label">Feedback</span>
-        </div>
-        <div class="sidebar-item" onclick="location.href='live_class.html'">
-          <span class="icon">🎥</span><span class="label">Live Class</span>
-        </div>
-        <div class="sidebar-item" onclick="location.href='notifications.html'">
-          <span class="icon">🔔</span><span class="label">Notifications</span>
-        </div>
-        <div class="sidebar-item" onclick="location.href='reports.html'">
-          <span class="icon">📈</span><span class="label">Reports</span>
-        </div>
-        <div class="sidebar-item" onclick="location.href='settings.html'">
-          <span class="icon">⚙️</span><span class="label">Settings</span>
-        </div>
+        <a class="sidebar-item" href="/index.html">
+          <span class="icon">📊</span>
+          <span class="label">Panel</span>
+        </a>
+        <a class="sidebar-item active" href="attendance.html">
+          <span class="icon">✅</span>
+          <span class="label">Asistencia</span>
+        </a>
+        <a class="sidebar-item" href="/pages/materials.html">
+          <span class="icon">📚</span>
+          <span class="label">Materiales</span>
+        </a>
+        <a class="sidebar-item" href="/pages/settings.html">
+          <span class="icon">⚙️</span>
+          <span class="label">Configuración</span>
+        </a>
       </nav>
-      <div class="sidebar-footer">
-        <img src="assets/images/teacher-avatar.jpg" alt="Avatar" class="avatar"/>
+   
+       <div class="sidebar-footer">
+        <img src="/images/nopicture.png" alt="Avatar" class="avatar" />
         <div>
-          <div class="user-name">Alex Morgan</div>
-          <div class="user-role">Teacher</div>
+          <div class="user-name">Alex Johnson</div>
+          <div class="user-role">Estudiante</div>
         </div>
+        <button class="logout-btn" onclick="logout()">🚪</button>
+
       </div>
     </aside>
 
@@ -54,39 +50,50 @@
     <main class="main-content">
       <!-- Breadcrumb + Back -->
       <div class="breadcrumb">
-        <a href="/index.html" class="back-button">← Dashboard</a>
-        <span class="current">Attendance</span>
+        <a href="/index.html" class="back-button">← Panel</a>
+        <span class="current">Asistencia</span>
       </div>
 
       <!-- Header + Tabs -->
       <header class="overview-header">
-        <h1>Attendance Management</h1>
+        <h1>Gestión de Asistencia</h1>
         <div class="tabs">
-          <button class="tab active" data-tab="mark">Mark Attendance</button>
-          <button class="tab" data-tab="justify">Absence Justification</button>
+          <button class="tab active" data-tab="mark">Registrar Asistencia</button>
+          <button class="tab" data-tab="justify">Justificar Ausencia</button>
         </div>
       </header>
 
-      <!-- TAB: Mark Attendance -->
+      <!-- TAB: Registrar Asistencia -->
       <section id="mark" class="tab-content">
-        <h3>Today's Class</h3>
+        <h3>Clase de Hoy</h3>
 
         <div class="chart-container">
-          <div class="chart-placeholder">Attendance Summary Chart</div>
+          <div class="chart-placeholder">Resumen de Asistencia</div>
           <div class="chart-labels">
-            <span>Mon</span><span>Tue</span><span>Wed</span>
-            <span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            <span>Lun</span><span>Mar</span><span>Mié</span>
+            <span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
           </div>
         </div>
       </section>
 
-      <!-- TAB: Absence Justification -->
+      <!-- TAB: Justificar Ausencia -->
       <section id="justify" class="tab-content hidden">
-        <h3>Absence Justification</h3>
+        <h3>Justificación de Ausencia</h3>
         <!-- lista de justificaciones -->
       </section>
     </main>
   </div>
+
+  <!-- Script para cerrar sesión -->
+  <script>
+ function logout() {
+    // Si usas localStorage/sessionStorage para guardar la sesión, bórrala aquí:
+    // localStorage.removeItem('token');
+    // Redirige al login:
+    window.location.href = '/pages/login.html'; // Cambia la ruta si tu login está en otra carpeta
+  }
+</script>
+
 
   <!-- enlace al JS separado -->
   <script src="/Js/attendance.js"></script>
