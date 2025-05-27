@@ -1,146 +1,148 @@
-/*───────────────────────────────────────────────────────────
-  VARIABLES
-───────────────────────────────────────────────────────────*/
-:root {
-  --primary-color:    #735CFF;
-  --bg-color:         #F9FAFB;
-  --input-bg:         #F3F4F6;
-  --border-radius:    8px;
-  --text-color:       #111827;
-  --placeholder-color:#6B7280;
-}
-
-/*───────────────────────────────────────────────────────────
-  RESET & BASE
-───────────────────────────────────────────────────────────*/
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont,
-               'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-               'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  padding: 0;
+  background: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/*───────────────────────────────────────────────────────────
-  CONTAINER
-───────────────────────────────────────────────────────────*/
-.container {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 24px;
+.register-container {
+  max-width: 480px;
+  margin: 48px auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(20,22,40,0.06);
+  padding: 36px 32px 22px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/*───────────────────────────────────────────────────────────
-  TYPOGRAFÍA
-───────────────────────────────────────────────────────────*/
+.register-logo {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
 h2 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: #18192c;
 }
 
-p.subtitle {
-  font-size: 14px;
-  color: var(--placeholder-color);
-  margin-bottom: 24px;
+.subtitle {
+  font-size: 15px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 18px;
 }
 
-/*───────────────────────────────────────────────────────────
-  TABS DE ROL
-───────────────────────────────────────────────────────────*/
 .tabs {
   display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
+  gap: 14px;
+  margin-bottom: 28px;
 }
 
 .tab {
-  flex: 1;
-  text-align: center;
-  padding: 8px 0;
-  background-color: #EEF2FF;
-  border-radius: var(--border-radius);
+  background: #f2efff;
+  color: #735cff;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 14px;
-  color: var(--primary-color);
+  transition: background 0.18s, color 0.18s;
   user-select: none;
-  transition: background-color .2s, color .2s;
 }
 
 .tab.active {
-  background-color: var(--primary-color);
-  color: #FFF;
+  background: #735cff;
+  color: #fff;
 }
 
-/*───────────────────────────────────────────────────────────
-  GRUPOS DE FORMULARIO
-───────────────────────────────────────────────────────────*/
-.form-group {
-  margin-bottom: 16px;
-}
-
-.form-group label {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.form-group input {
+.register-form {
   width: 100%;
-  padding: 12px;
-  border: none;
-  background-color: var(--input-bg);
-  border-radius: var(--border-radius);
-  font-size: 14px;
-  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
 
-.form-group input::placeholder {
-  color: var(--placeholder-color);
+.register-form label {
+  margin: 10px 0 3px 2px;
+  color: #202235;
+  font-weight: 500;
+  font-size: 15px;
 }
 
-/*───────────────────────────────────────────────────────────
-  BOTÓN PRINCIPAL
-───────────────────────────────────────────────────────────*/
+.register-form input {
+  height: 41px;
+  border-radius: 8px;
+  border: 1px solid #ececec;
+  padding: 0 14px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  background: #f8f8fa;
+  transition: border 0.17s;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #735cff;
+  background: #fff;
+}
+
 .btn {
-  width: 100%;
-  padding: 12px 0;
-  background-color: var(--primary-color);
-  color: #FFF;
+  width: 110px;
+  align-self: center;
+  background: #735cff;
+  color: #fff;
   border: none;
-  border-radius: var(--border-radius);
-  font-size: 14px;
+  border-radius: 8px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 18px;
   cursor: pointer;
-  transition: background-color .2s;
+  transition: background 0.19s;
 }
 
 .btn:hover {
-  background-color: darken(var(--primary-color), 10%);
-}
-
-/*───────────────────────────────────────────────────────────
-  ENLACE A LOGIN
-───────────────────────────────────────────────────────────*/
-.login-link {
-  text-align: center;
-  margin-top: 16px;
-  font-size: 14px;
+  background: #5638e4;
 }
 
 .login-link a {
-  color: var(--primary-color);
-  text-decoration: none;
+  color: #735cff;
+  text-decoration: none;         /* Sin subrayado por defecto */
   font-weight: 500;
+  transition: text-decoration 0.2s, color 0.2s;
+  line-height: 1.1;              /* Más compacto */
 }
 
 .login-link a:hover {
-  text-decoration: underline;
+  text-decoration: underline;    /* Subrayado solo al pasar el mouse */
+  color: #553ac6;                /* O el color hover de tu login */
+}
+
+.login-link {
+  line-height: 1.3;
+}
+
+.divider {
+  color: #bdbdbd;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0 3px;
+  user-select: none;
+}
+
+.error {
+  color: #e53935;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  text-align: left;
 }

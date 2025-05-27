@@ -1,0 +1,189 @@
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #444;
+  padding: 10px 22px;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  margin: 2px 8px;
+}
+
+.sidebar-item .icon {
+  font-size: 22px;
+  width: 28px;
+}
+
+.sidebar-item.active {
+  background: #eceafd;
+  color: #735CFF !important;    /* Forzamos el color morado */
+  font-weight: 700;
+}
+
+.sidebar-item:hover {
+  background: #eceafd;
+  color: #735CFF !important;
+}
+
+.sidebar-footer {
+    display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-top: 1px solid #ececff;
+}
+
+
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+ font-weight: 600;
+  font-size: 15px;
+  color: #222;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #888;
+}
+
+/* MAIN CONTENT CENTRADO */
+.main-content {
+  flex: 1;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Centra horizontal */
+  align-items: center;     /* Centra vertical */
+  background: #f8f9fb;
+}
+
+/* TARJETA DE PERFIL */
+.profile-container {
+  background: #fff;
+  max-width: 520px;
+  width: 100%;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 38px 32px 28px 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 22px;
+  color: #333;
+  font-weight: 600;
+  gap: 10px;
+  font-size: 1.07rem;
+}
+
+.profile-main-title {
+  margin:0 0 18px 0;
+  font-weight:700;
+}
+
+.profile-photo-box {
+  display: flex;
+  align-items: flex-end;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid #eee;
+}
+
+.profile-photo-btn {
+  background: #f1edfc;
+  color: #735CFF;
+  border: none;
+  border-radius: 7px;
+  padding: 7px 18px;
+  font-size: 0.97rem;
+  cursor: pointer;
+  transition: background 0.18s;
+  margin-bottom: 10px;
+}
+.profile-photo-btn:hover {
+  background: #e3dafd;
+}
+
+.profile-form label {
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 3px;
+  display: block;
+  font-size: 15px;
+}
+.profile-form input[type="text"],
+.profile-form input[type="email"] {
+  width: 100%;
+  padding: 9px 12px;
+  border-radius: 7px;
+  border: 1px solid #e2e2e2;
+  background: #f7f7fa;
+  margin-bottom: 15px;
+  font-size: 15px;
+  outline: none;
+  transition: border 0.17s;
+}
+.profile-form input[type="text"]:focus,
+.profile-form input[type="email"]:focus {
+  border: 1.2px solid #735CFF;
+}
+.profile-section-title {
+  font-weight: 600;
+  color: #444;
+  margin: 22px 0 10px 0;
+  font-size: 1rem;
+}
+.profile-form select {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 7px;
+  border: 1px solid #e2e2e2;
+  background: #f7f7fa;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+.profile-save-btn {
+  background: #735CFF;
+  color: #fff;
+  border: none;
+  padding: 11px 24px;
+  border-radius: 7px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+.profile-save-btn:hover {
+  background: #553ac6;
+}
+
+/* RESPONSIVE: ocultar sidebar y usar ancho completo en móvil */
+@media (max-width: 900px) {
+  .profile-container {
+    max-width: 98vw;
+    padding: 18px 2vw;
+  }
+  .sidebar {
+    display: none;
+  }
+}

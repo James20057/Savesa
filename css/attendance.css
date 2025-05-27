@@ -56,35 +56,61 @@ body, html, #root {
 .sidebar-item {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  cursor: pointer;
+  gap: 12px;
+  text-decoration: none;
   color: var(--muted);
-  transition: background-color .2s, color .2s;
+  padding: 12px 20px;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  margin: 2px 8px;
+  cursor: pointer;
 }
 
-.sidebar-item.active,
+.sidebar-item.active {
+  background: #eceafd;
+  color: var(--purple);
+  font-weight: 700;
+}
+
 .sidebar-item:hover {
-  background-color: var(--card-bg);
+  background: #eceafd;
   color: var(--purple);
 }
-
 .sidebar-item .icon {
-  margin-right: 12px;
-  font-size: 18px;
+  font-size: 22px;
+  width: 28px;
+  margin-right: 0;  /* porque ya usamos gap */
 }
 
 .sidebar-footer {
-  padding: 20px;
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 22px 18px 18px 18px;
+  border-top: 1px solid #ececff;
+  /* No wrapping */
+  white-space: nowrap;
 }
 
-.sidebar-footer .avatar {
-  width: 32px;
-  height: 32px;
+
+.avatar {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #888;
 }
 
 /* ============================

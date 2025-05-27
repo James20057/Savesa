@@ -56,35 +56,61 @@ body, html, #root {
 .sidebar-item {
   display: flex;
   align-items: center;
-  padding: 12px 20px;
-  cursor: pointer;
+  gap: 12px;
+  text-decoration: none;
   color: var(--muted);
-  transition: background-color .2s, color .2s;
-}
-
-.sidebar-item.active,
-.sidebar-item:hover {
-  background-color: var(--card-bg);
-  color: var(--purple);
+  padding: 10px 22px;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  margin: 2px 8px;
+  cursor: pointer;
 }
 
 .sidebar-item .icon {
-  margin-right: 12px;
-  font-size: 18px;
+  font-size: 22px;
+  width: 28px;
+}
+
+.sidebar-item.active {
+  background: #eceafd;
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.sidebar-item:hover {
+  background: #eceafd;
+  color: var(--purple);
 }
 
 .sidebar-footer {
-  padding: 20px;
   display: flex;
   align-items: center;
   gap: 12px;
+  padding: 22px 18px 18px 18px;
+  border-top: 1px solid #ececff;
+  /* No wrapping */
+  white-space: nowrap;
 }
 
-.sidebar-footer .avatar {
-  width: 32px;
-  height: 32px;
+
+.avatar {
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #888;
 }
 
 /* ============================
@@ -227,4 +253,24 @@ body, html, #root {
 .pending-assignments .task-due {
   flex: 1;
   text-align: right;
+}
+
+.logout-btn {
+  width: 100%;
+  background: #ffeaea;
+  color: #e53935;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 19px;
+  transition: background 0.18s, color 0.18s;
+  box-shadow: 0 2px 10px rgba(229,57,53,0.04);
+  letter-spacing: 0.5px;
+}
+.logout-btn:hover {
+  background: #e53935;
+  color: #fff;
 }
