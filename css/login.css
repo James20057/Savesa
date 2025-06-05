@@ -1,0 +1,135 @@
+body {
+  background: #f7f7fc;
+  font-family: 'Inter', Arial, sans-serif;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 40px 30px;
+  background: #fff;
+  border-radius: 22px;
+  box-shadow: 0 12px 36px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-logo {
+  width: 180px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 24px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #ececec;
+  justify-content: center; /* <- Añade esta línea */
+}
+
+.tab {
+  position: relative;
+  padding: 7px 0;
+  cursor: pointer;
+  color: #222;
+  font-weight: 500;
+  font-size: 1rem;
+  background: none;
+  border: none;
+}
+
+.tab.active {
+  color: #735cff;
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: #735cff;
+}
+
+label {
+  margin-top: 14px;
+  margin-bottom: 7px;
+  font-weight: 600;
+  color: #2e2e2e;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  margin-bottom: 8px;
+  background: #f4f4fa;
+  transition: border-color 0.2s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #735cff;
+  outline: none;
+}
+
+button[type="submit"] {
+  margin-top: 18px;
+  padding: 13px 0;
+  background: #735cff;
+  color: #fff;
+  border: none;
+  border-radius: 22px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #5a43c2;
+}
+
+.login-links {
+  margin-top: 17px;
+  text-align: center;
+  font-size: 0.98rem;
+}
+
+.login-link {
+  color: #735cff;
+  text-decoration: none;
+  margin: 0 2px;
+}
+
+.divider {
+  color: #bbb;
+}
+
+.error-message {
+  background: #fdecea;
+  color: #b91c1c;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 14px;
+}

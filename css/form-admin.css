@@ -1,0 +1,146 @@
+/* form-admin.css */
+
+/* Contenedor principal para los formularios */
+.section {
+  background: #fff;
+  padding: 32px 24px;
+  margin-top: 24px;
+  border-radius: 14px;
+  box-shadow: 0 2px 14px 0 rgba(80,80,110,0.04);
+  max-width: 900px;
+  min-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section h1, .section h2, .section h3, .section h4 {
+  margin-bottom: 24px;
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.section label {
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 20px;
+  color: #22223b;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.section input[type="text"],
+.section input[type="number"],
+.section select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 18px;
+  background: #f8f8fc;
+  transition: border-color 0.2s;
+}
+
+.section select:focus,
+.section input[type="text"]:focus,
+.section input[type="number"]:focus {
+  border-color: #735cff;
+  outline: none;
+  background: #fff;
+}
+
+.card-button, .section button[type="submit"], .section button, .section input[type="submit"] {
+  background: #735cff;
+  color: #fff;
+  padding: 10px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: background 0.19s;
+  font-weight: 500;
+  box-shadow: 0 2px 8px 0 rgba(115, 92, 255, 0.07);
+}
+
+.card-button:hover, .section button[type="submit"]:hover, .section button:hover, .section input[type="submit"]:hover {
+  background: #5e46d6;
+}
+
+/* Mensaje de éxito */
+.section p[style*="color:green"] {
+  background: #e4fbe9;
+  color: #26883c !important;
+  border-left: 5px solid #5ed47e;
+  padding: 10px 18px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  margin-top: 12px;
+  font-weight: 500;
+  letter-spacing: .01em;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .section {
+    padding: 12px 4vw;
+    margin-top: 12px;
+  }
+  .table-actions {
+    flex-direction: column !important;
+    gap: 10px;
+  }
+}
+
+/* ACCIONES DE TABLA (HORIZONTAL) */
+.table-actions {
+  display: flex;
+  flex-direction: row;        /* ←--- Cambiado a fila */
+  align-items: center;
+  gap: 12px;                  /* Espacio entre botones */
+  justify-content: center;    /* Centrar en la celda */
+}
+
+.card-button.btn-small {
+  padding: 4px 22px;
+  font-size: 0.98rem;
+  border-radius: 6px;
+  box-shadow: none;
+  min-width: 90px;
+  margin: 0;
+}
+
+.card-button.btn-danger {
+  background: #e53935;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  transition: background 0.18s;
+}
+.card-button.btn-danger:hover {
+  background: #c62828;
+}
+
+.msg-success {
+  background: #d6f6df;
+  color: #216840;
+  border-left: 5px solid #49b37d;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 1.07rem;
+}
+
+.msg-error {
+  background: #fde5e4;
+  color: #b72121;
+  border-left: 5px solid #d44c4c;
+  padding: 12px 18px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  font-size: 1.07rem;
+}
+
+.section table tr {
+  height: 54px; /* O el valor que te guste */
+}

@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.register-container {
+  max-width: 480px;
+  margin: 48px auto 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(20,22,40,0.06);
+  padding: 36px 32px 22px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.register-logo {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  color: #18192c;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.tabs {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.tab {
+  background: #f2efff;
+  color: #735cff;
+  border: none;
+  padding: 7px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  user-select: none;
+}
+
+.tab.active {
+  background: #735cff;
+  color: #fff;
+}
+
+.register-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-form label {
+  margin: 10px 0 3px 2px;
+  color: #202235;
+  font-weight: 500;
+  font-size: 15px;
+}
+
+.register-form input {
+  height: 41px;
+  border-radius: 8px;
+  border: 1px solid #ececec;
+  padding: 0 14px;
+  margin-bottom: 5px;
+  font-size: 15px;
+  background: #f8f8fa;
+  transition: border 0.17s;
+}
+
+.register-form input:focus {
+  outline: none;
+  border-color: #735cff;
+  background: #fff;
+}
+
+.btn {
+  width: 110px;
+  align-self: center;
+  background: #735cff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 18px;
+  cursor: pointer;
+  transition: background 0.19s;
+}
+
+.btn:hover {
+  background: #5638e4;
+}
+
+.login-link a {
+  color: #735cff;
+  text-decoration: none;         /* Sin subrayado por defecto */
+  font-weight: 500;
+  transition: text-decoration 0.2s, color 0.2s;
+  line-height: 1.1;              /* Más compacto */
+}
+
+.login-link a:hover {
+  text-decoration: underline;    /* Subrayado solo al pasar el mouse */
+  color: #553ac6;                /* O el color hover de tu login */
+}
+
+.login-link {
+  line-height: 1.3;
+}
+
+.divider {
+  color: #bdbdbd;
+  font-weight: 400;
+  font-size: 18px;
+  padding: 0 3px;
+  user-select: none;
+}
+
+.error {
+  color: #e53935;
+  font-size: 14px;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  text-align: left;
+}
+
+
+.register-logo {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  margin: 0 auto 12px auto;
+  display: block;
+}
+
+h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 2px;
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 15px;
+  color: #888;
+}
+
+.roles {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 18px;
+}
+
+
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 18px;
+  text-align: center;
+  font-weight: 500;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+

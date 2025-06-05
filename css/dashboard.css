@@ -1,0 +1,432 @@
+/* ============================
+   Variables y reset básico
+   ============================ */
+:root {
+  --purple: #735CFF;
+  --light-bg: #F9FAFB;
+  --card-bg: #FFF;
+  --muted: #6B7280;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: var(--light-bg);
+}
+
+/* ============================
+   Contenedor principal
+   ============================ */
+.dashboard-container {
+  display: flex;
+  height: 100%;
+}
+
+.dashboard-flex {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+/* ============================
+   Sidebar
+   ============================ */
+.sidebar {
+  width: 220px;
+  background-color: #EEF2FF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar-header {
+  padding: 20px;
+}
+
+.sidebar-header h2 {
+  font-size: 18px;
+  color: var(--purple);
+}
+
+.sidebar-nav {
+  flex: 1;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--muted);
+  padding: 10px 22px;
+  font-size: 18px;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  margin: 2px 8px;
+  cursor: pointer;
+}
+
+.sidebar-item .icon {
+  font-size: 22px;
+  width: 28px;
+}
+
+.sidebar-item.active {
+  background: #eceafd;
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.sidebar-item:hover {
+  background: #eceafd;
+  color: var(--purple);
+}
+
+.sidebar-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 18px 18px 18px;
+  border-top: 1px solid #ececff;
+  white-space: nowrap;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #222;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #888;
+}
+
+/* ============================
+   Main content
+   ============================ */
+.main-content {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.overview-header h1 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* ============================
+   Overview cards
+   ============================ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Fuerza siempre 3 columnas */
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+
+
+.overview-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.overview-card .card-icon {
+  font-size: 24px;
+  color: var(--purple);
+  margin-bottom: 8px;
+}
+
+.overview-card .card-title {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.overview-card .card-value {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.overview-card .card-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.overview-card .card-button {
+  background: var(--purple);
+  color: #FFF;
+  border: none;
+  padding: 8px 12px;
+  border-radius: var(--radius);
+  cursor: pointer;
+  align-self: stretch;
+}
+
+/* ============================
+   Chart placeholder
+   ============================ */
+.chart-container {
+  min-width: 270px;
+  max-width: 300px;
+  background: #fafbfc;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(115,92,255,0.05);
+  padding: 18px 12px 16px 12px;
+  margin: 0;
+}
+
+.chart-placeholder {
+  height: 120px;
+  background: #EEE;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ============================
+   Secciones Upcoming & Pending
+   ============================ */
+.section {
+  min-width: 340px;
+  max-width: 470px;
+  margin: 0;
+  padding: 28px 24px 22px 24px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 2px 14px 0 rgba(80,80,110,0.06);
+}
+
+.section h4 {
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.section .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-top: 1px solid #F3F4F6;
+}
+
+.section .row:first-child {
+  border-top: none;
+}
+
+.upcoming-classes .class-name { flex: 2; }
+.upcoming-classes .class-time,
+.upcoming-classes .class-location,
+.upcoming-classes .class-instructor {
+  flex: 1;
+  text-align: center;
+}
+
+.pending-assignments .task-icon {
+  margin-right: 12px;
+  color: var(--purple);
+}
+
+.pending-assignments .task-title { flex: 2; }
+.pending-assignments .task-due {
+  flex: 1;
+  text-align: right;
+}
+
+.logout-btn {
+  width: 100%;
+  background: #ffeaea;
+  color: #e53935;
+  border: none;
+  border-radius: 7px;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 19px;
+  transition: background 0.18s, color 0.18s;
+  box-shadow: 0 2px 10px rgba(229,57,53,0.04);
+  letter-spacing: 0.5px;
+}
+.logout-btn:hover {
+  background: #e53935;
+  color: #fff;
+}
+
+
+.section form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.section label {
+  font-weight: 500;
+  color: #5741c5;
+  margin-bottom: 2px;
+}
+.section input[type="text"], 
+.section select {
+  border: 1px solid #dedede;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 1em;
+  margin-bottom: 4px;
+  background: #f9fafe;
+  transition: border .13s;
+}
+.section input[type="text"]:focus, 
+.section select:focus {
+  border-color: #735cff;
+  outline: none;
+  background: #fff;
+}
+.section button[type="submit"] {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 11px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(115,92,255,0.08);
+  transition: background .15s;
+}
+.section button[type="submit"]:hover {
+  background: #5741c5;
+}
+.dashboard-row {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+@media (max-width: 1000px) {
+  .dashboard-row { flex-direction: column; gap: 24px;}
+}
+
+/* Para la foto de perfil en el panel y configuración */
+.profile-photo, .avatar {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  border: 1.5px solid #ececf5;
+  background: #fafbfc;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.avatar { width: 44px; height: 44px; border-radius: 50%; margin-bottom: 0;}
+
+
+.main-content h1,
+.main-content h2,
+.section h4 {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+/* Centrado de títulos de categorías */
+h1, h2, .overview-header h1, .section h4, .main-title, .category-title {
+  text-align: center !important;
+  width: 100%;
+  display: block;
+}
+
+/* Centrar y agrandar secciones */
+.section {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 900px; /* Puedes ajustar el tamaño máximo aquí */
+  box-sizing: border-box;
+}
+
+/* Centrar el botón +Nueva Materia */
+.btn-new-materia, .new-materia-btn {
+  display: block;
+  margin: 0 auto 32px auto;
+}
+
+/* Formularios grandes y simétricos */
+form {
+  width: 100%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form input[type="text"], form button, form input[type="email"], form select {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Botón Crear Materia simétrico */
+form button, .btn-save, .profile-save-btn {
+  display: block;
+  width: 100%;
+  margin: 16px auto 0 auto;
+  font-size: 1.07rem;
+}
+
+/* Alineación vertical de la sección al centro */
+.main-content, #main-content, .main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Centra las tablas dentro de las secciones */
+.section table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Ajustes responsivos para pantallas pequeñas */
+@media (max-width: 900px) {
+  .section, form { max-width: 98vw; }
+  .main-content { padding: 7vw 0; }
+}
+
+form label {
+  text-align: center;
+  display: block;
+}
